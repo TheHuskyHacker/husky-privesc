@@ -86,6 +86,7 @@ grab "https://github.com/itm4n/PrintSpoofer/releases/latest/download/PrintSpoofe
 grab "https://github.com/tylerdotrar/SigmaPotato/releases/latest/download/SigmaPotato.exe" "$TOOLS_DIR/windows/potatoes/SigmaPotato.exe" "SigmaPotato"
 grab "https://github.com/ohpe/juicy-potato/releases/latest/download/JuicyPotato.exe" "$TOOLS_DIR/windows/potatoes/JuicyPotato.exe" "JuicyPotato"
 grab "https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1" "$TOOLS_DIR/windows/PowerUp.ps1" "PowerUp.ps1"
+grab "https://raw.githubusercontent.com/itm4n/PrivescCheck/master/PrivescCheck.ps1" "$TOOLS_DIR/windows/PrivescCheck.ps1" "PrivescCheck.ps1"
 grab "https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/SharpUp.exe" "$TOOLS_DIR/windows/sharp/SharpUp.exe" "SharpUp"
 grab "https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/Seatbelt.exe" "$TOOLS_DIR/windows/sharp/Seatbelt.exe" "Seatbelt"
 grab "https://github.com/itm4n/FullPowers/releases/latest/download/FullPowers.exe" "$TOOLS_DIR/windows/FullPowers.exe" "FullPowers"
