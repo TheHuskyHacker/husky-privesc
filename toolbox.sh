@@ -93,6 +93,7 @@ grab "https://github.com/itm4n/FullPowers/releases/latest/download/FullPowers.ex
 grab "https://github.com/antonioCoco/RunasCs/releases/latest/download/RunasCs.zip" "$TOOLS_DIR/windows/RunasCs.zip" "RunasCs"
 grab "https://github.com/int0x33/nc.exe/raw/master/nc64.exe" "$TOOLS_DIR/windows/nc64.exe" "nc64.exe"
 grab "https://github.com/int0x33/nc.exe/raw/master/nc.exe" "$TOOLS_DIR/windows/nc.exe" "nc.exe (32-bit)"
+grab "https://github.com/besimorhino/powercat/blob/master/powercat.ps1" "$TOOLS_DIR/windows/powercat.ps1" "powercat.ps1"
 
 # ═══════ ACTIVE DIRECTORY ═══════
 section "Active Directory"
