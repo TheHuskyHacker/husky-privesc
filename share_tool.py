@@ -4,8 +4,8 @@ SMB & File Transfer Command Generator — OSCP Edition
 Generates copy-paste-ready commands for file sharing and impacket SMB ops.
 
 Usage:
-  python3 smb_tools.py
-  python3 smb_tools.py --lhost 192.168.45.5 --target 10.10.10.10
+  python3 share_tools.py
+  python3 share_tools.py --lhost 192.168.45.5 --target 10.10.10.10
 """
 
 import argparse
